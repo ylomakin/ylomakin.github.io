@@ -192,6 +192,35 @@
 	</div>
 	<!-- End Search Tours Section -->
 
+	<!-- Register Section -->
+	<div class="contact-section text-center g-heading-v8">
+		<div class="container-fluid">
+			<div class="contact-section-col contact-section-content">
+				<h3 class="h3"><strong>Заявка на</strong> получение гражданства</h3>
+				<form class="sky-form" id="google_form" target="_self" onsubmit="" action="" style="max-width:500px; margin:0px auto;">
+					<fieldset>
+						<label class="input g-mb-10">
+							<input type="text" placeholder="ФИО" name="name" id="google_name">
+						</label>
+						<label class="input g-mb-10">
+							<input type="email" placeholder="E-mail" name="phone" id="google_email">
+						</label>
+						<label class="textarea textarea-expandable g-mb-40">
+							<textarea rows="3" placeholder="Сообщение" name="message" id="google_feed"></textarea>
+						</label>
+						<button id="google_send" class="btn-u btn-u-lg btn-u-red btn-u-upper" type="button">Отправить</button>
+					</fieldset>
+
+					<!-- Success Message -->
+					<div class="message">
+						<i class="rounded-x fa fa-check"></i>
+						<p>Ваша заявка успешно отправлена!</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- End Register Section -->
 
 	<!-- Popular Tours Section -->
 	<div class="popular-tours text-center g-heading-v8 g-pt-85 g-pb-70" id="Popular-Tours">
@@ -580,6 +609,42 @@ $(function() {
 	Datepicker.initDatepicker();
 	ContactForm.initContactForm();
 });
+</script>
+
+<script type="text/javascript">
+	function postToGoogle() {
+		var fio = $('#google_name').val();
+        var email = $('#google_email').val();
+        var feed = $('#google_feed').val();
+
+		$.ajax({
+		url: "https://docs.google.com/forms/d/e/1FAIpQLSdJCaJsFTMjQdm5gpg56mfFRaZVccpW33HrLtPgV2djTGiaNw/formResponse",
+		data: {
+			"entry.1417901929": fio,
+			"entry.1602456341": email,
+			"entry.1556037273": feed,
+		},
+		type: "POST",
+		dataType: "xml",
+		statusCode: {
+			0: function() {
+				$("#google_form fieldset").hide();
+				$("#google_form .message").show();
+			},
+			200: function() {
+				$("#google_form fieldset").hide();
+				$("#google_form .message").show();
+			}
+		}
+	});
+	}
+	 
+	$(document).ready(function(){
+		$('#google_send').on('click', function() {
+			postToGoogle();
+			return false;
+		});
+	});
 </script>
 
 <!--[if lt IE 10]>
