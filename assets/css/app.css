@@ -2599,3 +2599,33 @@ img.img-center,
 	-webkit-align-items: center;
 	align-items: center;
 }
+
+#google_form_block {
+	position:absolute;
+	right:10%;
+	top:100px;
+}
+#google_form_block.contact-section {
+	background-color:rgba(49,53,62,0.8);
+}
+#google_form_block .contact-section-content {
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:15px;
+	padding-bottom:0px;
+}
+#google_form_block .contact-section-content h3 {
+	margin-top:0px;
+}
+#google_form_block .contact-section-content h3 strong {
+	display:block;
+}
+#google_form_block .contact-section-col {
+	min-height:405px;
+}
+#google_form {
+	width:300px;
+}
+#google_form.sky-form fieldset {
+	padding:0px;
+}
