@@ -1490,3 +1490,20 @@ background: #e74c3c;text-transform: uppercase;
 	padding-top:15px;
 	padding-bottom:20px;
 }
+.sponsors {
+	font-size:0px;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.sponsors a {
+	display:inline-block;
+	max-width:100px;
+	vertical-align:middle;
+}
+.sponsors a + a {
+	margin-left:15px;
+}
+.sponsors a img {
+	display:block;
+	width:100%;
+}
