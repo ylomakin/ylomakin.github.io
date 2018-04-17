@@ -33,5 +33,10 @@
 		"name": "youtube",
 		"url": "https://www.youtube.com/channel/UCLAccwf_YvWGnxSIVgGtl7g",
 		"icon": "fa-youtube"
+	},
+	{
+		"name": "linkedin",
+		"url": "https://www.linkedin.com/company/apla-blockchain/",
+		"icon": "fa-linkedin"
 	}
 ]
